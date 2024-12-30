@@ -4,6 +4,7 @@ import CookieParser from "cookieparser";
 
 const app = express();
 // Basic CONFIG Work Here
+// Can be used for every deveploment environment.
 // cors ki configaration , origin means kay kis frontend saay talking karni hay. iss a url do  process.env.CORS_ORIGIN maay.
 app.use(cors({
     origin: process.env.CORS_ORIGIN, 

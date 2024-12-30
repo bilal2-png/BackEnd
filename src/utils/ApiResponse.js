@@ -1,4 +1,4 @@
-//Basic apiresponse handling ki config. no need to understand this code.
+//Basic apiresponse handling ki config. no need to understand this code. Can be used for every deveploment environment.
 
 class ApiResponse {
     constructor(statusCode, data, message = "Success"){

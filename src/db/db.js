@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 import { DB_NAME } from "../constants.js";
 
-// Connect to MongoDB database
+// Connect to MongoDB database.Can be used for every deveploment environment.
 const connectDB = async function dbConnection() {
     const mongoURL = process.env.MONGODB_URL;
     if (!mongoURL || !DB_NAME) {

@@ -1,4 +1,4 @@
-//Basic apierror handling ki config. no need to understand this code.
+//Basic apierror handling ki config. no need to understand this code.Can be used for every deveploment environment.
 class ApiError extends Error {
     constructor(
         statusCode,

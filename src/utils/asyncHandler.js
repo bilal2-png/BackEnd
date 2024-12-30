@@ -1,5 +1,5 @@
 // service jo baar baar use koni haay. iss ko banana ha iss folder maay
-
+//Can be used for every deveploment environment.
 // yah aysncHandler db connection to backend ki logic ki service yah utils (utility) hay METHOD1
 const aysncHandler = (requestHandler) => {
     (req, res, next) => {
