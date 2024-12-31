@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'
-import CookieParser from "cookieparser";
+import { CookieParser } from 'cookieparser';
 
 const app = express();
 // Basic CONFIG Work Here
