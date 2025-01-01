@@ -1,6 +1,6 @@
 import express from "express";
 import cors from 'cors'
-import { CookieParser } from 'cookieparser';
+import cookieParser from 'cookie-parser'  // not CookieParser from 'cookieparser'
 
 const app = express();
 // Basic CONFIG Work Here
@@ -8,12 +8,20 @@ const app = express();
 // cors ki configaration , origin means kay kis frontend saay talking karni hay. iss a url do  process.env.CORS_ORIGIN maay.
 app.use(cors({
     origin: process.env.CORS_ORIGIN, 
-    Credential: true,
+    credentials: true,
     optionsSuccessStatus: 200
 }))
 
+const port = process.env.PORT || 5000
+
+ const server = function serverListening () {
+     app.listen(port, () => {
+    console.log(`⚙️  Server is running at http://localhost:${port}`);
+    console.log('✅ MongoDB Connected');
+    console.log('🛣️  Routes initialized');
+});}
 // cookie parser configuration. no need of additional key-value configuration data
-app.use(CookieParser())
+app.use(cookieParser())
 
 //Json ki limit lagani ha itni hi aaiy
 app.use(express.json({ limit:'16kb' }))
@@ -24,5 +32,15 @@ app.use(express.urlencoded({ extended: true, limit:'16kb' }))
 // files store karvanay ka liay public folder or uploads folder (kay indar) use kar saktaay haay
 // app.use(express.static('uploads'))
 app.use(express.static('public'))
+// app.listen(process.env.PORT, () => console.log(`Server is running on ${process.env.PORT}`));
+
+
+
+
+//routes
+import userRouter from "./routes/user.router.js";
+
+app.use('/api/v1/users', userRouter);
 
 export { app }
+export default server;

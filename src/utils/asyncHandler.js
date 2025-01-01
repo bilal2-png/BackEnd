@@ -2,13 +2,13 @@
 //Can be used for every deveploment environment.
 // yah aysncHandler db connection to backend ki logic ki service yah utils (utility) hay METHOD1
 const aysncHandler = (requestHandler) => {
-    (req, res, next) => {
+    return (req, res, next) => {
         Promise.resolve(requestHandler(req, res, next))
             .catch((error) => next(error))
     }
 }
 
-export { aysncHandler }
+export default aysncHandler ;
 //const aysncHandler= () => {}
 //const aysncHandler= (fn) => {}
 //const aysncHandler= (fn) => () => {}
